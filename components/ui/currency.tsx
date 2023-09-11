@@ -6,7 +6,7 @@ const formatter = new Intl.NumberFormat("es-AR", {
     style: 'currency',
     currency: 'ARS'
   });  
- interface CurrencyProps{
+interface CurrencyProps{
     value?:string|number;
 }
 const Currency:React.FC<CurrencyProps> = ({
