@@ -1,21 +1,21 @@
-import { Product } from "@/types";
+import { Evento } from "@/types";
 import qs from "query-string";
 
-const URL=`${process.env.NEXT_PUBLIC_API_URL}/products`;
+const URL=`${process.env.NEXT_PUBLIC_API_URL}/eventos`;
 
 interface Query {
   categoryId?: string;
-  colorId?: string;
-  sizeId?: string;
+  ubicacionId?: string;
+  fechaId?: string;
   isFeatured?: boolean;
 }
 
-const getProducts = async (query: Query): Promise<Product[]> => {
+const getEventos = async (query: Query): Promise<Evento[]> => {
   const url = qs.stringifyUrl({
     url: URL,
     query: { 
-      colorId: query.colorId,
-      sizeId: query.sizeId,
+      ubicacionId: query.ubicacionId,
+      fechaId: query.fechaId,
       categoryId: query.categoryId,
       isFeatured: query.isFeatured,
     },
@@ -26,4 +26,4 @@ const getProducts = async (query: Query): Promise<Product[]> => {
   return res.json();
 };
 
-export default getProducts;
+export default getEventos;

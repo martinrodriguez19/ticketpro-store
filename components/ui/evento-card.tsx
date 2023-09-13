@@ -1,5 +1,5 @@
 "use client";
-import {Product} from "@/types"
+import {Evento} from "@/types"
 import Image from "next/image";
 import { Expand, ShoppingCart } from "lucide-react";
 import IconButton from "@/components/ui/icon-button";
@@ -9,18 +9,18 @@ import {MouseEventHandler} from "react"
 import PreviewModal from "./preview-modal";
 import usePreviewModal from "@/hooks/use-preview-modal";
 import useCart from "@/hooks/use-cart";
-interface ProductCard {
-    data: Product;
+interface EventoCard {
+    data: Evento;
 }
 
-const ProductCard: React.FC <ProductCard> = ({
+const EventoCard: React.FC <EventoCard> = ({
     data
 })=>{
     const cart =  useCart()
     const previewModal = usePreviewModal();
     const router = useRouter();
     const handleClick = () =>{
-        router.push(`/product/${data?.id}`)
+        router.push(`/evento/${data?.id}`)
     }
     const onPreview: MouseEventHandler<HTMLButtonElement> = (event) =>{
         event.stopPropagation();
@@ -70,4 +70,4 @@ const ProductCard: React.FC <ProductCard> = ({
         </div>
     );
 }
-export default ProductCard
+export default EventoCard

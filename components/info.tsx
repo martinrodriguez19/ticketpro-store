@@ -1,10 +1,10 @@
 "use client";
-import {Product } from "@/types";
+import {Evento } from "@/types";
 import Currency from "@/components/ui/currency";
 import Button from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 interface InfoProps {
-    data: Product;
+    data: Evento;
 }
 
 const Info:React.FC<InfoProps> = ({
@@ -25,15 +25,33 @@ const Info:React.FC<InfoProps> = ({
                         Fecha:
                     </h3>
                     <div>
-                        {data?.size?.name}
+                        {data?.fecha?.name}
+                    </div>
+                </div>
+                <div className="flex items-center gap-x-4">
+                    <h3 className="font-semibol text-black" >
+                        Hora:
+                    </h3>
+                    <div>
+                        {data?.fecha?.value}hs
                     </div>
                 </div>
                 <div className="flex items-center gap-x-4">
                     <h3 className="font-semibol text-black">
                         Ubicacion:
                     </h3>
-                    <div className="h-6 w-6 rounded-full border border-gray-600" style={{backgroundColor: data?.color?.value}} />
-                </div>                
+                    <div>
+                        {data?.ubicacion?.name}                            
+                    </div>
+                </div>   
+                <div className="flex items-center gap-x-4">
+                    <h3 className="font-semibol text-black">
+                    Google Maps:
+                    </h3>
+                    <div>
+                        <a href={data?.ubicacion?.value}><em>{data?.ubicacion?.value}</em></a>                            
+                    </div>
+                </div>                 
             </div>
             <div className="mt-10 flex items-center gap-x-3">
                 <Button className="flex items-center gap-x-2">

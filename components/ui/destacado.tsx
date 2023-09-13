@@ -1,8 +1,8 @@
-import { Billboard as BillboardType} from "@/types";
-interface BillboardProps{
-    data: BillboardType;
+import { Destacado as DestacadoType} from "@/types";
+interface DestacadoProps{
+    data: DestacadoType;
 };
-const Billboard: React.FC<BillboardProps> =({
+const Destacado: React.FC<DestacadoProps> =({
     data
 })=>{
     console
@@ -22,4 +22,4 @@ const Billboard: React.FC<BillboardProps> =({
 
     );
 }
-export default Billboard
+export default Destacado

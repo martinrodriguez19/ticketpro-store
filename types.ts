@@ -1,4 +1,4 @@
-export interface Billboard{
+export interface Destacado{
     id:string;
     label: string;
     imageUrl: string;
@@ -7,28 +7,28 @@ export interface Billboard{
 export interface Category{
     id:string;
     name: string;
-    billboard: Billboard;
+    destacado: Destacado;
 }
-export interface Product{
+export interface Evento{
     id:string;
     category: Category;
     name: string;
     price: string;
     isFeatured: boolean;
-    size: Size;
-    color: Color;
+    fecha: Fecha;
+    ubicacion: Ubicacion;
     images: Image[];
 }
 export interface Image {
     id:string;
     url: string;
 }
-export interface Size {
+export interface Fecha {
     id: string;
     name:string;
     value:string
 }
-export interface Color {
+export interface Ubicacion {
     id: string;
     name:string;
     value:string

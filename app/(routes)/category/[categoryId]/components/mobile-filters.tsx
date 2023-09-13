@@ -6,18 +6,18 @@ import { Dialog } from "@headlessui/react";
 
 import IconButton  from "@/components/ui/icon-button";
 import Button from "@/components/ui/button";
-import { Color, Size } from "@/types";
+import { Ubicacion, Fecha } from "@/types";
 
 import Filter from "./filter";
 
 interface MobileFiltersProps {
-  sizes: Size[],
-  colors: Color[],
+  fechas: Fecha[],
+  ubicacions: Ubicacion[],
 }
 
 const MobileFilters: React.FC<MobileFiltersProps> = ({
-  sizes,
-  colors
+  fechas,
+  ubicacions
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -36,7 +36,7 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
 
       <Dialog open={open} as="div" className="relative z-40 lg:hidden" onClose={onClose}>
         
-        {/* Background color and opacity */}
+        {/* Background ubicacion and opacity */}
         <div className="fixed inset-0 bg-black bg-opacity-25" />
         
         {/* Dialog position */}
@@ -50,14 +50,14 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
 
             <div className="p-4">
               <Filter
-                valueKey="sizeId" 
+                valueKey="fechaId" 
                 name="Fecha" 
-                data={sizes}
+                data={fechas}
               />
               <Filter 
-                valueKey="colorId" 
+                valueKey="ubicacionId" 
                 name="Ubicacion" 
-                data={colors}
+                data={ubicacions}
               />
             </div>
           </Dialog.Panel>
