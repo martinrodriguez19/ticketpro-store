@@ -2,7 +2,12 @@ export interface Destacado{
     id:string;
     label: string;
     imageUrl: string;
-
+};
+export interface Entrada{
+    id:string;
+    name: string;
+    value: string;
+    quantity: string;
 };
 export interface Category{
     id:string;
@@ -16,6 +21,7 @@ export interface Evento{
     price: string;
     isFeatured: boolean;
     fecha: Fecha;
+    entrada:Entrada;
     ubicacion: Ubicacion;
     images: Image[];
 }

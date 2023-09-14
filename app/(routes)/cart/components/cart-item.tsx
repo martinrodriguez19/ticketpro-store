@@ -5,7 +5,7 @@ import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
 import useCart from "@/hooks/use-cart";
 import { Evento } from "@/types";
-
+import { Entrada } from "@/types";
 
 interface CartItemProps {
   data: Evento;
@@ -45,6 +45,7 @@ const CartItem: React.FC<CartItemProps> = ({
             <p className="text-gray-500">{data.ubicacion.name}</p>
             <p className="ml-4 border-l border-gray-200 pl-4 text-gray-500">{data.fecha.name}</p>
           </div>
+          
           <Currency value={data.price} />
         </div>
       </div>

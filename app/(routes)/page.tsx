@@ -8,7 +8,7 @@ export const revalidate = 0;
 
 const HomePage = async () => {
   const eventos = await getEventos({ isFeatured: true });
-  const destacado = await getDestacado("3611f2aa-d9b2-4c32-bb99-4af5ac43becd");
+  const destacado = await getDestacado("a2ca9dbc-81ec-40b5-8059-72823f9124a0");
 
   return (
     <Container>
